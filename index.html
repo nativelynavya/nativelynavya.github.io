@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Monochord</title>
     
-    <!-- Pulling the Premium Fonts from Google Natively -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Codystar&family=Special+Elite&display=swap" rel="stylesheet">
-
     <style>
-        /* Crushed Paper Texture Effect & Layout */
+        /* Forcing GitHub to fetch the Premium Google Fonts natively */
+        @import url('https://googleapis.com');
+
         body {
             margin: 0;
             padding: 0;
@@ -22,65 +19,83 @@
             align-items: center;
             text-align: center;
             
-            /* The Organic Crushed Cream Paper Visual Blend */
-            background-color: #FAF8F2; 
+            /* Enhanced 3% Contrast Crushed Paper Optical Illusion */
+            background-color: ##F2E1AD; 
             background-image: 
-                radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0),
-                radial-gradient(rgba(0,0,0,0.01) 1px, transparent 0);
-            background-size: 8px 8px;
-            background-position: 0 0, 4px 4px;
+                radial-gradient(rgba(30, 41, 59, 0.03) 1.5px, transparent 0),
+                radial-gradient(rgba(30, 41, 59, 0.02) 1.5px, transparent 0);
+            background-size: 12px 12px;
+            background-position: 0 0, 6px 6px;
             
             color: #1E293B; /* Deep Indigo Slate */
             overflow: hidden;
         }
 
-        /* Dotted Citylight Main Title with Clean Fading Animation */
+        /* Dotted Title with the Cinematic Focus-Pulse Animation */
         h1 {
             font-family: 'Codystar', sans-serif;
-            font-size: 3.5rem;
-            margin: 0 0 15px 0;
-            letter-spacing: 4px;
+            font-size: 3.8rem;
+            margin: 0 0 20px 0;
             font-weight: 400;
+            color: #1E293B;
             
-            /* The Smooth Clarifying Fade-In Animation */
-            animation: clarifyFade 2.5s ease-out forwards;
+            /* Activating the new animation block */
+            animation: focusPulse 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             opacity: 0;
-            filter: blur(5px);
         }
 
-        /* Typewriter Subtext with Delayed Clarifying Animation */
+        /* Typewriter Subtext stays with the clean clarifying fade */
         p {
             font-family: 'Special Elite', monospace;
             font-size: 1.1rem;
             margin: 0;
             letter-spacing: 1px;
             color: #475569;
+            max-width: 600px;
+            line-height: 1.6;
             
-            /* Delayed Animation so it fades in after the main title */
-            animation: clarifyFade 2.5s ease-out 1.2s forwards;
+            /* Delayed so it drops in right after the title clarifies */
+            animation: clarifyFade 2.5s ease-out 1.5s forwards;
             opacity: 0;
-            filter: blur(5px);
+            filter: blur(4px);
         }
 
-        /* The Animation Control Script */
+        /* NEW ANIMATION: The Focus-Pulse Title Entrance */
+        @keyframes focusPulse {
+            0% {
+                opacity: 0;
+                letter-spacing: 16px; /* Starts completely spaced out */
+                filter: blur(12px);    /* Heavily out of focus */
+                transform: scale(1.05);
+            }
+            60% {
+                opacity: 0.8;
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                letter-spacing: 4px;  /* Pulls tightly together into sharp dots */
+                filter: blur(0px);     /* Crystal clear */
+                transform: scale(1);
+            }
+        }
+
+        /* The Classic Clarifying Fade-In for Typewriter Subtext */
         @keyframes clarifyFade {
             0% {
                 opacity: 0;
-                filter: blur(8px);
-                transform: scale(0.98);
+                filter: blur(6px);
             }
             100% {
                 opacity: 1;
                 filter: blur(0px);
-                transform: scale(1);
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Accessible for screen-readers naturally -->
-    <h1 aria-label="Project Monochord">Project Monochord</h1>
+    <h1 class="dotted-title" aria-label="Project Monochord">Project Monochord</h1>
     <p>Translating Data Waves into Financial Literacy for Visually Impaired Youth</p>
 
 </body>
